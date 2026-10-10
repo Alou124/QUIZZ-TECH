@@ -1,0 +1,160 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QUIZZTECH 🤖</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            color: white;
+            font-family: "Righteous", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+
+
+        }
+
+        header {
+            background-color: blueviolet;
+            color: black;
+            font-size: 16px;
+            padding: 12px;
+        }
+
+        .clickGame {
+            background-color: blueviolet;
+            color: black;
+            border: 3px solid rgb(4, 3, 3);
+            border-radius: 25px;
+        }
+
+        .carte {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .reponse {
+            white-space: normal;
+            overflow-wrap: anywhere;
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- En-tête -->
+    <header>
+        <div class="container-fluid">
+            <div class="row align-items-center">
+
+                <div class="col-4">
+                    <span id="nomJoueur">Nom : Joueur</span>
+                </div>
+                <div class="col-4 d-flex justify-content-start">
+                    <p id="messageReponse" class="text-center fw-bold"></p>
+                </div>
+                <div class="col-4 d-flex justify-content-end">
+                    <div>
+                        <span id="temp_restant">Temps restant : 20 secondes </span>
+                    </div>
+                    <div class="col-4 d-flex justify-content-end">
+                        <div>
+                            <span id="scoreJoueur">Score : 0</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </header>
+
+
+    <!-- Écran d'accueil -->
+    <div id="clickgame" class="d-flex justify-content-center align-items-center min-vh-100 p-3">
+
+        <div class="card p-4 p-md-5 clickGame carte">
+
+            <div class="card-body text-center">
+                <h2>QUIZZTECH 🤖</h2>
+                <p>Teste tes connaissances en informatique !</p>
+            </div>
+
+            <button class="btn btn-success" onclick="gameclick()">
+                Jouer 🚀
+            </button>
+
+        </div>
+    </div>
+
+
+    <!-- Formulaire du joueur -->
+    <div id="formulaire" class="d-flex justify-content-center align-items-center min-vh-100 p-3" hidden>
+
+        <div class="card p-4 p-md-5 clickGame carte">
+
+            <div class="card-body text-center">
+                <h3>Bienvenue !</h3>
+
+                <label for="nomj" class="form-label">
+                    Entre ton nom :
+                </label>
+
+                <input type="text" class="form-control" id="nomj" placeholder="Ton nom...">
+            </div>
+
+            <button class="btn btn-success" onclick="startup()">
+                Lancer 🚀
+            </button>
+
+        </div>
+    </div>
+
+
+    <!-- Carte du quiz -->
+    <div id="carte" class="d-flex justify-content-center align-items-center min-vh-100 p-3" hidden>
+
+        <div class="card clickGame carte">
+
+            <div id="contenucarte"></div>
+
+        </div>
+    </div>
+
+
+    <!-- Résultat final -->
+    <div id="resultat" class="d-flex justify-content-center align-items-center min-vh-100 p-3" hidden>
+
+        <div class="card p-4 clickGame carte text-center">
+
+            <h2>Quiz terminé ! 🎉</h2>
+
+            <p id="messageFinal"></p>
+
+            <button class="btn btn-success" onclick="recommencer()">
+                Recommencer 🔄
+            </button>
+
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```
